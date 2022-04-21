@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base_generic.html" %}
 
-</body>
-</html>
+{% block content %}
+<h1>Main page</h1>
+
+<p>Welcome to <em>Book World</em>. It's a very simple website written with Django.
+Developed with Python.</p>
+
+<h2>Dynamic content</h2>
+
+<p>The database of the site:</p>
+<ul>
+    <li><strong>The amount of books:</strong> {{ num_books }}</li>
+    <li><strong>The amount of instances:</strong> {{ num_instances }}</li>
+    <li><strong>The amount of the ordered instances:</strong> {{ num_instances_available }}</li>
+    <li><strong>The amount of authors:</strong> {{ num_authors }}</li>
+</ul>
+{% endblock %}
