@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% block head %}
     <img src="{% static 'images/logotip.jpg' %}"
-         style="width:lOOpx; height:lOOpx;" align="absmiddle">
+         style="width:100px; height:100px;" align="absmiddle">
     <font size=7, соlоr="blue">WebSite "World of books"</font>
     {% endblock %}
 </head>
@@ -28,7 +28,7 @@
             {% block sidebar %}
             <ul class="sidebar-nav">
                 <li><a href="{% url 'index' %}">Main page</a> </li>
-                <li><a href="">All books</a> </li>
+                <li><a href="{% url 'books' %}">All books</a> </li>
                 <li><a href="">All authors</a> </li>
             </ul>
             {% endblock %}
