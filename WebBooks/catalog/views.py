@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Author, Book, BookInstance, Genre
 
@@ -36,3 +37,12 @@ def index(request):
                                                           'num_instances_available': num_instances_available,
                                                           'num_authors': num_authors,
                                                           'num_visits': num_visits})
+
+
+class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
+    """
+    Universal class of books in current user's order list.
+    """
+    model = BookInstance
+    template_name = 'catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = 10
